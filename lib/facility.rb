@@ -21,7 +21,7 @@ class Facility
 
   def register_vehicle(vehicle)
     vehicle.register
+    @collected_fees += 100
     @registered_vehicles << vehicle
-    @registered_vehicles
   end
 end
