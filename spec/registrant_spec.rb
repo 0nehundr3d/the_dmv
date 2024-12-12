@@ -7,8 +7,15 @@ RSpec.describe Registrant do
     end
 
     describe "Initialize" do
-        it 'exists' do
+        it "exists" do
             expect(@registrant_1).to be_a(Registrant)
+        end
+    end
+
+    describe "Initialze methods" do
+        it "has a name" do
+            expect(@registrant_1.name).to eq("Bruce")
+            expect(@registrant_2.name).to eq("Penny")
         end
     end
 end
