@@ -19,4 +19,8 @@ class Registrant
     def earn_permit
         @permit = true
     end
+
+    def update_license_data(key)
+        @license_data[key] = true
+    end
 end
