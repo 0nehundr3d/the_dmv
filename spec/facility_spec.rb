@@ -16,6 +16,7 @@ RSpec.describe Facility do
       expect(@facility.address).to eq('2855 Tremont Place Suite 118 Denver CO 80205')
       expect(@facility.phone).to eq('(720) 865-4600')
       expect(@facility.services).to eq([])
+      expect(@facility.registered_vehicles).to eq([])
     end
   end
 
