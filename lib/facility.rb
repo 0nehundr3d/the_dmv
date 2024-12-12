@@ -20,6 +20,8 @@ class Facility
   end
 
   def register_vehicle(vehicle)
+    return if !@services.include?("Vehicle Registration")
+    
     vehicle.register
     
     case vehicle.plate_type

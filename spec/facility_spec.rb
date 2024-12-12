@@ -48,5 +48,11 @@ RSpec.describe Facility do
       expect(@facility.registered_vehicles).to eq([@cruz, @camaro, @bolt])
 
     end
+
+    it "can not register a vehicle without the appropirate service" do
+      expect(@facility.register_vehicle(@bolt)).to eq(nil)
+      expect(@facility.registered_vehicles).to eq([])
+      expect(@facility.collected_fees).to eq(0)
+    end
   end
 end
