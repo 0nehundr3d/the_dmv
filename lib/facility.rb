@@ -21,7 +21,16 @@ class Facility
 
   def register_vehicle(vehicle)
     vehicle.register
-    @collected_fees += 100
+    
+    case vehicle.plate_type
+    when :regular
+      @collected_fees += 100
+    when :antique
+      @collected_fees += 25
+    when :ev
+      @collected_fees += 200
+    end
+
     @registered_vehicles << vehicle
   end
 end

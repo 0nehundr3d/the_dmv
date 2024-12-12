@@ -36,6 +36,10 @@ RSpec.describe Facility do
     it "can register a vehicle" do
       expect(@facility.register_vehicle(@cruz)).to eq([@cruz])
       expect(@facility.collected_fees).to eq(100)
+
+      expect(@facility.register_vehicle(@camaro)).to eq([@cruz, @camaro])
+      expect(@facility.collected_fees).to eq(125)
+
     end
   end
 end
