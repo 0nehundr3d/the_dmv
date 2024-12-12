@@ -35,10 +35,11 @@ RSpec.describe Vehicle do
   end
 
   describe "register" do
-    it "can be registered" do
+    it "can register vehicles" do
       @cruz.register
 
       expect(@cruz.registration_date).to eq(Date.today)
+      expect(@cruz.plate_type).to eq(:regular)
     end
   end
 end

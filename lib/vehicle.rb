@@ -25,7 +25,8 @@ class Vehicle
     @engine == :ev
   end
 
-  def register
+  def register(plate_type = :regular)
     @registration_date = Date.today
+    @plate_type = plate_type
   end
 end
