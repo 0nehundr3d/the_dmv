@@ -17,6 +17,7 @@ RSpec.describe Facility do
       expect(@facility.phone).to eq('(720) 865-4600')
       expect(@facility.services).to eq([])
       expect(@facility.registered_vehicles).to eq([])
+      expect(@facility.collected_fees).to eq(0)
     end
   end
 
