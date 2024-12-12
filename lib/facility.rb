@@ -21,7 +21,7 @@ class Facility
 
   def register_vehicle(vehicle)
     return if !@services.include?("Vehicle Registration")
-    
+
     vehicle.register
     
     case vehicle.plate_type
@@ -34,5 +34,14 @@ class Facility
     end
 
     @registered_vehicles << vehicle
+  end
+
+  def administer_written_test(registrant)
+    return false if !services.include?("Written Test")
+    return false if !registrant.permit?
+    return false if registrant.age < 16
+
+    registrant.update_license_data(:written)
+    true
   end
 end
