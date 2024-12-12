@@ -44,4 +44,12 @@ class Facility
     registrant.update_license_data(:written)
     true
   end
+
+  def administer_road_test(registrant)
+    return false if !services.include?("Road Test")
+    return false if !registrant.license_data[:written]
+
+    registrant.update_license_data(:license)
+    true
+  end
 end
