@@ -1,1 +1,3 @@
 class FacilityFactory
+    
+end
