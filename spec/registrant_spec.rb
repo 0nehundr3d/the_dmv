@@ -24,7 +24,7 @@ RSpec.describe Registrant do
         end
 
 
-        it "has license date" do
+        it "has license data" do
             expect(@registrant_1.license_data).to eq({:written=>false, :license=>false, :renewed=>false})
             expect(@registrant_2.license_data).to eq({:written=>false, :license=>false, :renewed=>false})
         end
@@ -42,6 +42,16 @@ RSpec.describe Registrant do
             @registrant_2.earn_permit
 
             expect(@registrant_2.permit?).to eq(true)
+        end
+    end
+
+    describe "update_license_data" do
+        it "can update license data" do
+            @registrant_1.update_license_data(:written)
+            @registrant_1.update_license_data(:license)
+            @registrant_1.update_license_data(:renewed)
+
+            expect(@registrant_1.license_data).to eq({:written=>true, :license=>true, :renewed=>true})
         end
     end
 end
